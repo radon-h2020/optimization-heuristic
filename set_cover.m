@@ -50,48 +50,6 @@ interference_table = [];
 end
 
 
-function generate_random_constraints()
-    variables_n = 30;
-    constraints_n = 30;
-    
-    fileID = fopen('random_constraints.txt','w');
-    
-    fprintf(fileID,'f = [');
-    for i=1:variables_n
-        value=randsample([1:30],1);
-        fprintf(fileID,'%s;',num2str(value));
-    end
-    fprintf(fileID,'];\n\n\n');
-    
-    fprintf(fileID,'intcon = 1:%s;\n\n\n',num2str(variables_n));
-    
-    fprintf(fileID,'b = [');
-    for j=1:constraints_n
-        value=randsample([-1,1],1);
-        fprintf(fileID,'%s',num2str(value));
-        if j==constraints_n
-            fprintf(fileID,'];\n\n\n');
-        else
-            fprintf(fileID,',');
-        end
-    end
-    
-    fprintf(fileID,'A = [');
-    for j=1:constraints_n
-        for i=1:variables_n
-            value=randi([0 1]);
-            fprintf(fileID,'%s',num2str(value));
-            if i==variables_n
-                fprintf(fileID,';\n');
-            else
-                fprintf(fileID,',');
-            end
-        end
-    end
-    fprintf(fileID,'];');
-    fclose(fileID);
-end
-
 function f=generate_f(interference_table)
     f = interference_table
 end
