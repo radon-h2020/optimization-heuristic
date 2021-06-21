@@ -1,27 +1,9 @@
-%  f=[5;10;3];
-%  a=2;
-% intcon = 1;
-% intcon = 2;
-% intcon = 3;
-% A = [-1,0,-1;
-%     0,-1,-1;
-%     -1,0,-1;
-%     -1,0,-1;
-%     0,-1,0;
-%     1,0,0;
-%     0,1,0;
-%     0,0,1];
-% b=[-1,-1,-1,-1,-1,1,1,1];
-
 %x = intlinprog(f,intcon,A,b)
 
-% tic;
-% generate_random_constraints();
-% toc;
 
 %[selected_sets, elements_by_set] = run_algorithm();
 %modify_tosca_model([pwd, filesep, 'test_model.tosca']);
-modify_tosca_model([pwd, filesep, 'model_In.tosca'], [pwd, filesep, 'model_Out.tosca']);
+%modify_tosca_model([pwd, filesep, 'model_In.tosca'], [pwd, filesep, 'model_Out.tosca']);
 
 function [selected_sets, elements_by_set] = run_algorithm()
     T1 = readtable('target_Test.csv');
@@ -29,24 +11,31 @@ function [selected_sets, elements_by_set] = run_algorithm()
     T2 = readtable('input_Test.csv');
     input_table = table2array(T2);
     interference_table = compute_interference_table(throughput_table, input_table);
-    A=generate_A(input_table);
+    A=(-1)*generate_A(input_table);
     set_matrix = A.';
     tic
 %     HEURISTIC
-    [selected_sets, elements_by_set] = greedy_set_cover(interference_table, set_matrix);
-    disp(selected_sets)
-    for i=1:length(elements_by_set)
-        disp(elements_by_set(i).indexes)
-    end
+%     [selected_sets, elements_by_set] = greedy_set_cover(interference_table, set_matrix);
+%     disp(selected_sets)
+%     for i=1:length(elements_by_set)
+%         disp(elements_by_set(i).indexes)
+%     end
 
 %     EXACT
-%     experiments = length(throughput_table);
-%     b = ones([1, 24]);
-%     intcon = 1:experiments;
-%     f = throughput_table;
-%     reshape(f,1,[]);
-%     x = intlinprog(f,intcon,A,b);
-%     toc
+    experiments = length(throughput_table);
+    b = (-1)*ones([1, 24]);
+    intcon = 1:experiments;
+    f = throughput_table;
+    %reshape(f,1,[]);
+    lb = zeros(experiments,1);
+    ub = ones(experiments,1);
+    Aeq = [];
+    beq = [];
+    x = intlinprog(f,intcon,A,b,Aeq,beq,lb,ub);
+    toc
+    
+    selected_sets = [];
+    elements_by_set = [];
 
 end
 
@@ -71,47 +60,8 @@ interference_table = [];
 end
 
 
-function generate_random_constraints()
-    variables_n = 30;
-    constraints_n = 30;
-    
-    fileID = fopen('random_constraints.txt','w');
-    
-    fprintf(fileID,'f = [');
-    for i=1:variables_n
-        value=randsample([1:30],1);
-        fprintf(fileID,'%s;',num2str(value));
-    end
-    fprintf(fileID,'];\n\n\n');
-    
-    fprintf(fileID,'intcon = 1:%s;\n\n\n',num2str(variables_n));
-    
-    fprintf(fileID,'b = [');
-    for j=1:constraints_n
-        value=randsample([-1,1],1);
-        fprintf(fileID,'%s',num2str(value));
-        if j==constraints_n
-            fprintf(fileID,'];\n\n\n');
-        else
-            fprintf(fileID,',');
-        end
-    end
-    
-    fprintf(fileID,'A = [');
-    for j=1:constraints_n
-        for i=1:variables_n
-            value=randi([0 1]);
-            fprintf(fileID,'%s',num2str(value));
-            if i==variables_n
-                fprintf(fileID,';\n');
-            else
-                fprintf(fileID,',');
-            end
-        end
-    end
-    fprintf(fileID,'];');
-    fclose(fileID);
-end
+
+
 
 function f=generate_f(interference_table)
     f = interference_table
