@@ -1,0 +1,9 @@
+./run1.sh avrora
+./run1.sh batik
+./run1.sh h2
+./run1.sh jython
+./run1.sh lusearch
+./run1.sh sunflow
+./run1.sh tradebeans
+./run1.sh tradesoap
+./run1.sh xalan

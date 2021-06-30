@@ -1,0 +1,41 @@
+---
+tosca_definitions_version: tosca_simple_yaml_1_3
+
+node_types:
+  radon.nodes.run_neural_network:
+    derived_from: tosca.nodes.SoftwareComponent
+    properties:
+      input_path:
+        type: string
+        description: The path of the input file
+      output_path:
+        type: string
+        description: The paht of the output file
+    attributes:
+      input_path:
+        type: string
+      output_path:
+        type: string
+    interfaces:
+      Standard:
+        type: tosca.interfaces.node.lifecycle.Standard
+        inputs:
+          input_path: {default: { get_property: [SELF, input_path] }, type: string }
+          output_path: {default: { get_property: [SELF, output_path] }, type: string }
+        operations:
+          create: playbooks/launch.yaml
+
+topology_template:
+  inputs:
+    input_path:
+      type: string
+    output_path:
+      type: string
+
+  node_templates:
+    my-run_neural_network:
+      type: radon.nodes.run_neural_network
+      attributes:
+        input_path: { get_input: input_path }
+        output_path: { get_input: output_path }
+...
