@@ -1,0 +1,26 @@
+{
+  "tosca_name": {
+    "is_set": true,
+    "data": "my-run_dacapo"
+  },
+  "tosca_id": {
+    "is_set": true,
+    "data": "my-run_dacapo_0"
+  },
+  "state": {
+    "is_set": true,
+    "data": "started"
+  },
+  "component_version": {
+    "is_set": false,
+    "data": null
+  },
+  "admin_credential": {
+    "is_set": false,
+    "data": null
+  },
+  "num_to_run": {
+    "is_set": false,
+    "data": null
+  }
+}

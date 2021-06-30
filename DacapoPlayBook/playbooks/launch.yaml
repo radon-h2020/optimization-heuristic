@@ -1,0 +1,22 @@
+---
+- hosts: all
+  tasks:
+    - name: Remove old instances
+      shell: "{{ item }}"
+      with_items: 
+        - docker stop test test2 test3 test4
+        - docker rm test test2 test3 test4
+        - docker image rm dacapodocker
+      ignore_errors: yes
+
+    - name: Run Dacapo Benchmarks
+      shell: "{{ item }}"
+      with_items: 
+        - apt install -y sysstat unzip
+        - rm -Rf ~/DockerTemp_ParallelDockersV2/ || true
+        - wget https://www.dropbox.com/s/v8teagp71t1msiy/DockerTemp_ParallelDockersV2.zip
+        - unzip DockerTemp_ParallelDockersV2.zip -d ~
+        - docker build -t dacapodocker ~/DockerTemp_ParallelDockersV2/
+        - chmod 777 ~/DockerTemp_ParallelDockersV2/*
+        - ~/DockerTemp_ParallelDockersV2/RunAll{{ num_to_run }}Docker_Separately_V3.sh
+      ignore_errors: yes
