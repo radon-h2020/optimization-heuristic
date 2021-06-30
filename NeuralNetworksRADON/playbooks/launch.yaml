@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+    - name: Run Neural Network
+      shell: "{{ item }}"
+      with_items: 
+        - wget https://www.dropbox.com/s/4pdbppgrddu2gut/test2.m
+        - cp test2.m {{ input_path }}
+        - "cd {{ input_path }} && vol/matlab/R2018a/bin/matlab -nodisplay -r \"test2(pwd,pwd)\""

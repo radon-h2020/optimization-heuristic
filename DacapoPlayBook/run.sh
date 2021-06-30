@@ -1,0 +1,1 @@
+opera deploy service.yaml
