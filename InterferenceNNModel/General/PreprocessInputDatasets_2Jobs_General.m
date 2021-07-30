@@ -1,6 +1,6 @@
     % THis file is updateded by Ahmad and Giuliano in 20Jul2020
     %This file is used for TCS datasets
- function [] = PreprocessInputDatasets_2Jobs(pathDataSets)
+ function [] = PreprocessInputDatasets_2Jobs(pathDataSets, dacapo)
     %clc
     %clear
     %try
@@ -61,10 +61,10 @@
         clear RunQ CPU Errors Tput dacapoRun1Trace
         dataset=datasets{d}
         startpwd=pwd
-        dacapo={'batik','jython','avrora','lusearch','sunflow','xalan'};
+        %dacapo={'batik','jython','avrora','lusearch','sunflow','xalan'};
     %    dacapo={'batik','jython','luindex','lusearch','sunflow','xalan'};
      %   dacapo={'xalan','tradesoap','tradebeans','lusearch','sunflow', 'jython', 'h2', 'avrora', 'batik'};
-        dacapo={'batik','jython','luindex','lusearch','sunflow','xalan'};
+        %dacapo={'batik','jython','luindex','lusearch','sunflow','xalan'};
 
         dacapoAbbreviations={'ba','jy','li','ls','sf','xa'};
         basepath=sprintf('%s%s%s',pwd,filesep,dataset)
