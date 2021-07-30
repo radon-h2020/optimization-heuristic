@@ -1,7 +1,7 @@
 # How to use interference NN model:
 
 ### To pre-process training data sets of two jobs:
-The names of oflder must be (This is an example):
+The names of folder must be (This is an example):
 ```
 p08+0+0-noht1
 p08+0+0-noht2
@@ -9,13 +9,13 @@ p08+0+0-noht3
 p08+0+0-noht4
 ```
 
-Then call function PreprocessInputDatasets_2Jobs and provid path to datasets."
+Then call function PreprocessInputDatasets_2Jobs and provide the path to datasets."
 ```
 /vol/matlab/R2018a/bin/matlab -nodisplay -r "PreprocessInputDatasets_2Jobs(pwd)"
 ```
 
 
-### To pre-process testing data sets of for jobs:
+### To pre-process testing data sets of four jobs:
 The names of oflder must be (This is an example):
 p08+0+0+0+0-noht
 
