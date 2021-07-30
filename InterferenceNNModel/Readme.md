@@ -2,10 +2,12 @@
 
 ### To pre-process training data sets of two jobs:
 The names of oflder must be (This is an example):
+```
 p08+0+0-noht1
 p08+0+0-noht2
 p08+0+0-noht3
 p08+0+0-noht4
+```
 
 Then call function PreprocessInputDatasets_2Jobs and provid path to datasets."
 ```
