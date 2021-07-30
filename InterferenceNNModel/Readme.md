@@ -8,7 +8,9 @@ p08+0+0-noht3
 p08+0+0-noht4
 
 Then call function PreprocessInputDatasets_2Jobs and provid path to datasets."
-```/vol/matlab/R2018a/bin/matlab -nodisplay -r "PreprocessInputDatasets_2Jobs(pwd)"```
+```
+/vol/matlab/R2018a/bin/matlab -nodisplay -r "PreprocessInputDatasets_2Jobs(pwd)"
+```
 
 
 ### To pre-process testing data sets of for jobs:
