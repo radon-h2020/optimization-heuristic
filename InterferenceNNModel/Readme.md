@@ -31,3 +31,23 @@ Provid path do datasets (training and testing) The neural network will return tr
 ``` 
 /vol/matlab/R2018a/bin/matlab -nodisplay -r "Reg4Jobs_RepresentB_V4_ThroughputRADON_V2FunctionPicards(pwd)" 
 ```
+
+
+### To Test the NN function:
+```
+ clc
+ clear
+ close all
+
+% Calling the NN model
+BestNet=Reg4Jobs_RepresentB_V4_ThroughputRADON_V2FunctionPicards(pwd)
+
+% Loading the testing data
+input_Test = load('input_Test.csv'); 
+input_Train= load ('input_Train.csv');
+
+%Predicting the Thput
+
+net=BestNet{1,1}
+x=net(input_Test')'
+```
