@@ -520,7 +520,7 @@ target_Test=data_Test(:,end);
 %inputTest=data3(:,1:end-1);
 %targetTest=data3(:,end);
 
-NumberofIterations= 20                              % This is the number of iterations to run the neural networks function 
+NumberofIterations= 5                              % This is the number of iterations to run the neural networks function 
 NumberofIterations_Char=num2str(NumberofIterations);      % to convert it to string  in order to use it for the figure title 
 Best_TargetValue_MAPE=20
 % For chosing the all result of neural network results that are equal or less than Best_TargetValue_MAPE  
