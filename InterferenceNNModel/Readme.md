@@ -34,6 +34,7 @@ Provid path do datasets (training and testing) The neural network will return tr
 
 
 ### To Test the NN function:
+The following is a simple application of using the NN model:
 ```
  clc
  clear
