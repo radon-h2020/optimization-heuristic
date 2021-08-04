@@ -192,7 +192,7 @@ function run_ga(hosts_no, microservices_no,net)
             Aeq(current_microservice, (current_host-1)*microservices_no+current_microservice) = 1;
         end
     end
-    options = optimoptions('ga','Display','iter');
+    options = optimoptions('ga','Display','iter','MaxStallGenerations',10);
     lb = zeros(size(intcon));
     ub = ones(size(intcon));
     [v,fval] = ga(@(v)ga_objective(v,hosts_no, microservices_no, net),total_variables_no,A,b,Aeq,beq,lb,ub,[],[], options)
