@@ -1,12 +1,17 @@
-[hosts_no, microservices_no] = read_tosca_model([pwd, filesep, 'radonblueprintstesting__DecompositionDemo.tosca']);
+%[hosts_no, microservices_no] = read_tosca_model([pwd, filesep, 'radonblueprintstesting__DecompositionDemo.tosca']);
 %[input_table, throughput_table] = read_table('data.csv');
 %single_column_throughputs = get_list_of_single_throughput(microservices_no, input_table, throughput_table);444
 %interference_table = get_interference_table(single_column_throughputs, input_table, throughput_table);
 %best_input_table_row = get_best_experiment(input_table, throughput_table);
-filename_in = [pwd, filesep, 'radonblueprintstesting__DecompositionDemo.tosca'];
-filename_out = [pwd, filesep, 'radonblueprintstesting__DecompositionDemo_out.tosca'];
+%filename_in = [pwd, filesep, 'radonblueprintstesting__DecompositionDemo.tosca'];
+%filename_out = [pwd, filesep, 'radonblueprintstesting__DecompositionDemo_out.tosca'];
 %run_linear_program(hosts_no, microservices_no);
-run_ga(hosts_no, microservices_no);
+load mynet.mat; % this loads the net object
+
+hosts_no=2;
+microservices_no = 4;
+
+run_ga(hosts_no, microservices_no, net);
 %modify_tosca_model(filename_in, filename_out, best_input_table_row)
 a=2;
 
@@ -120,15 +125,35 @@ function throughput_array = run_neural_network(hosts_no)
 end
 
 
-function z=ga_objective(v,hosts_no, microservices_no)
+function z=ga_objective(v,hosts_no, microservices_no, net)
     objective_without_constant_terms = zeros(1, hosts_no * microservices_no + hosts_no);
     for i=1: hosts_no
         objective_without_constant_terms(hosts_no * microservices_no + i) = 1;
     end
+    v  = round(v); %% UGLY       
     z = sum(objective_without_constant_terms .* v);
+    
+    ntypes = net.inputs{1}.size; % number of microservice types
+    
+    %%% ONLY TO FIX IS THE TYPE VARIABLE
+    type = 1:microservices_no; % this has to be changed with the actual mapping from the microservice i to its type based on the TOSCA model. The type is a number between 1 and 6, assuming that 6 is the number of typs in Ahmad's NN input vector. 
+    for j=1:hosts_no
+        vhostj = v(((j-1)*microservices_no+1):(j*microservices_no));        
+        allocation_on_host_j = zeros(1,ntypes);
+        for i=1:microservices_no
+            ti = type(i); % the type vector is somethi
+            xij = vhostj(i);
+            if xij == 1
+                allocation_on_host_j(ti) = allocation_on_host_j(ti) + 1;
+            end
+        end
+        %allocation_on_host_j
+        fj = net(allocation_on_host_j(:));
+        z = z - fj;
+    end
 end
 
-function run_ga(hosts_no, microservices_no)
+function run_ga(hosts_no, microservices_no,net)
     b = zeros(1,hosts_no+1);
     beq = zeros(1, microservices_no);
     A = zeros(hosts_no+1, hosts_no * microservices_no + hosts_no);
@@ -167,7 +192,11 @@ function run_ga(hosts_no, microservices_no)
             Aeq(current_microservice, (current_host-1)*microservices_no+current_microservice) = 1;
         end
     end
-    [v,fval] = ga(@(v)ga_objective(v,hosts_no, microservices_no),total_variables_no,A,b,Aeq,beq);
+    options = optimoptions('ga','Display','iter');
+    lb = zeros(size(intcon));
+    ub = ones(size(intcon));
+    [v,fval] = ga(@(v)ga_objective(v,hosts_no, microservices_no, net),total_variables_no,A,b,Aeq,beq,lb,ub,[],[], options)
+    v = round(v); % UGLY 
     a=2;
 end
 
