@@ -1,0 +1,127 @@
+tosca_definitions_version: tosca_simple_yaml_1_3
+
+metadata:
+  targetNamespace: "radon.blueprints.testing"
+topology_template:
+  node_templates:
+    OperableCompute_0:
+      type: radon.nodes.OperableCompute
+      metadata:
+        x: "1503"
+        y: "687"
+        displayName: "OperableCompute"
+      properties:
+        name: "st220"
+        public_address: "picard04.doc.ic.ac.uk"
+    DockerEngine_0:
+      type: radon.nodes.testing.DockerEngine
+      metadata:
+        x: "1010"
+        y: "692"
+        displayName: "DockerEngine"
+      properties:
+        private_address: "{ get_property: [ SELF, host, private_address ] }"
+        name: "{ get_property: [ SELF, host, name ] }"
+        public_address: "{ get_property: [ SELF, host, public_address ] }"
+      requirements:
+        - host:
+            node: OperableCompute_0
+            relationship: con_HostedOn_1
+            capability: host
+    OperableCompute_1:
+      type: radon.nodes.OperableCompute
+      metadata:
+        x: "1476"
+        y: "335"
+        displayName: "OperableCompute"
+      properties:
+        name: "st220"
+        public_address: "picard05.doc.ic.ac.uk"
+    DockerEngine_1:
+      type: radon.nodes.testing.DockerEngine
+      metadata:
+        x: "999"
+        y: "333"
+        displayName: "DockerEngine"
+      properties:
+        private_address: "{ get_property: [ SELF, host, private_address ] }"
+        name: "{ get_property: [ SELF, host, name ] }"
+        public_address: "{ get_property: [ SELF, host, public_address ] }"
+      requirements:
+        - host:
+            node: OperableCompute_1
+            relationship: con_HostedOn_2
+            capability: host
+    DockerApplication_0:
+      type: radon.nodes.testing.DockerApplication
+      metadata:
+        x: "593"
+        y: "615"
+        displayName: "DockerApplication"
+      properties:
+        image: "ubuntu"
+        name: "test"
+        cmd: "ls"
+      requirements:
+        - host:
+            node: DockerEngine_0
+            relationship: con_HostedOn_0
+            capability: host
+    DockerApplication_1:
+      type: radon.nodes.testing.DockerApplication
+      metadata:
+        x: "589"
+        y: "401"
+        displayName: "DockerApplication"
+      properties:
+        image: "ubuntu"
+        name: "test2"
+        cmd: "ls"
+      requirements:
+        - host:
+            node: DockerEngine_1
+            relationship: con_HostedOn_3
+            capability: host
+    DockerApplication_2:
+      type: radon.nodes.testing.DockerApplication
+      metadata:
+        x: "597"
+        y: "759"
+        displayName: "DockerApplication"
+      properties:
+        image: "ubuntu"
+        name: "test3"
+        cmd: "ls"
+      requirements:
+        - host:
+            node: DockerEngine_0
+            relationship: con_HostedOn_4
+            capability: host
+    DockerApplication_3:
+      type: radon.nodes.testing.DockerApplication
+      metadata:
+        x: "594"
+        y: "269"
+        displayName: "DockerApplication"
+      properties:
+        image: "ubuntu"
+        name: "test3"
+        cmd: "ls"
+      requirements:
+        - host:
+            node: DockerEngine_1
+            relationship: con_HostedOn_5
+            capability: host
+  relationship_templates:
+    con_HostedOn_2:
+      type: tosca.relationships.HostedOn
+    con_HostedOn_3:
+      type: tosca.relationships.HostedOn
+    con_HostedOn_0:
+      type: tosca.relationships.HostedOn
+    con_HostedOn_1:
+      type: tosca.relationships.HostedOn
+    con_HostedOn_4:
+      type: tosca.relationships.HostedOn
+    con_HostedOn_5:
+      type: tosca.relationships.HostedOn
