@@ -1,0 +1,22 @@
+1624235466.551403098
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  18380  3124 ?        Ss   00:31   0:00 /bin/bash ./run1_Parallel4.sh xalan
+root         9  0.0  0.0 120720  9820 ?        Sl   00:31   0:00 java -jar dacapo-9.12-MR1-bach.jar xalan -n 1600
+root        12  0.0  0.0  34408  2876 ?        R    00:31   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.4  0.0  18380  3132 ?        Ss   00:31   0:00 /bin/bash ./run1_Parallel4.sh xalan
+root         9  732  2.8 10809408 468380 ?     Sl   00:31   0:36 java -jar dacapo-9.12-MR1-bach.jar xalan -n 1600
+root        91  0.0  0.0  34408  2836 ?        R    00:31   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.2  0.0  18380  3132 ?        Ss   00:31   0:00 /bin/bash ./run1_Parallel4.sh xalan
+root         9  594  4.3 10809476 717552 ?     Sl   00:31   0:59 java -jar dacapo-9.12-MR1-bach.jar xalan -n 1600
+root       157  0.0  0.0  34408  2800 ?        R    00:31   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.1  0.0  18380  3132 ?        Ss   00:31   0:00 /bin/bash ./run1_Parallel4.sh xalan
+root         9  518  4.3 10809476 708280 ?     Sl   00:31   1:17 java -jar dacapo-9.12-MR1-bach.jar xalan -n 1600
+root       191  0.0  0.0  34408  2844 ?        R    00:31   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.1  0.0  18380  3132 ?        Ss   00:31   0:00 /bin/bash ./run1_Parallel4.sh xalan
+root         9  544  7.1 10809476 1166860 ?    Sl   00:31   1:48 java -jar dacapo-9.12-MR1-bach.jar xalan -n 1600
+root       257  0.0  0.0  34408  2864 ?        R    00:31   0:00 ps aux
+1624235491.590067316

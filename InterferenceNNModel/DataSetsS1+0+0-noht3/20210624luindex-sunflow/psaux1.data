@@ -1,0 +1,22 @@
+1624531947.988044824
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  2.0  0.0  18380  3128 ?        Ss   10:52   0:00 /bin/bash ./run1_Parallel1.sh luindex
+root         9  0.0  0.0 120752 10300 ?        Sl   10:52   0:00 java -jar dacapo-9.12-MR1-bach.jar luindex -n 1600
+root        13  0.0  0.0  34408  2916 ?        R    10:52   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.3  0.0  18380  3136 ?        Ss   10:52   0:00 /bin/bash ./run1_Parallel1.sh luindex
+root         9  184  0.8 8743580 136180 ?      Sl   10:52   0:09 java -jar dacapo-9.12-MR1-bach.jar luindex -n 1600
+root        60  0.0  0.0  34408  2904 ?        R    10:52   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.1  0.0  18380  3136 ?        Ss   10:52   0:00 /bin/bash ./run1_Parallel1.sh luindex
+root         9  182  0.9 8743580 161184 ?      Sl   10:52   0:18 java -jar dacapo-9.12-MR1-bach.jar luindex -n 1600
+root        66  0.0  0.0  34408  2868 ?        R    10:52   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.1  0.0  18380  3136 ?        Ss   10:52   0:00 /bin/bash ./run1_Parallel1.sh luindex
+root         9  169  0.8 8743580 147024 ?      Sl   10:52   0:25 java -jar dacapo-9.12-MR1-bach.jar luindex -n 1600
+root        72  0.0  0.0  34408  2924 ?        R    10:52   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  18380  3136 ?        Ss   10:52   0:00 /bin/bash ./run1_Parallel1.sh luindex
+root         9  160  0.9 8743580 147916 ?      Sl   10:52   0:32 java -jar dacapo-9.12-MR1-bach.jar luindex -n 1600
+root        78  0.0  0.0  34408  2924 ?        R    10:52   0:00 ps aux
+1624531973.078804023

@@ -1,50 +1,45 @@
     % THis file is updateded by Ahmad and Giuliano in 20Jul2020
-    %This file is used for TCS datasets
- function [] = PreprocessInputDatasets_2Jobs(pathDataSets)
+   
+ function [] = PreprocessInputDatasets_2Jobs(pathDataSets, dacapo)
     %clc
     %clear
     %try
     Z={};
-    if ispc
-        initpwd='C:\\Users\\gcasale\\Dropbox\\experiments\\17_tcs_ignio\\tcs';
-    else
-        %initpwd='/home/gcasale/Dropbox/experiments/17_tcs_ignio/tcs/';
-        initpwd='/home/gcasale/Dropbox/experiments/17_tcs_ignio/tcs/';
-    end
+    
     %%%%%%%initpwd=pwd
     pathDataSets
     initpwd=pathDataSets
     cd(initpwd);
-    dataset1 = {'p01+0+0-noht' 'p02+0+0-noht' 'p03+0+0-noht' 'p05+0+0-noht' 'p07+0+0-noht'}; % BASELINE NO-HT
-    dataset2 = {'p01+0+0-ht' 'p01+5+0-ht' 'p02+0+0-ht' 'p02+5+0-ht' 'p02+10+0-ht'}; % BASELINE HT
-    dataset3 = {'p01+0+0-noht' 'p01+1+0-noht' 'p01+5+0-noht' 'p01+10+0-noht' 'p01+15+0-noht' 'p02+0+0-noht' 'p02+1+0-noht' 'p02+5+0-noht' 'p02+10+0-noht' 'p02+15+0-noht'}; % NICE NO-HT
-    dataset4 = {'p01+0+0-ht' 'p01+5+0-ht' 'p02+0+0-ht' 'p02+5+0-ht' 'p02+10+0-ht'}; % NICE HT
-    dataset5 = {'p07+0+0-noht' 'p07+0+0-noht-batch'}; % SCHEDULER
+    dataset1 = {'DataSetsS1+0+0-noht' 'DataSetsS2+0+0-noht' 'DataSetsS3+0+0-noht' 'DataSetsS5+0+0-noht' 'DataSetsS7+0+0-noht'}; % BASELINE NO-HT
+    dataset2 = {'DataSetsS1+0+0-ht' 'DataSetsS1+5+0-ht' 'DataSetsS2+0+0-ht' 'DataSetsS2+5+0-ht' 'DataSetsS2+10+0-ht'}; % BASELINE HT
+    dataset3 = {'DataSetsS1+0+0-noht' 'DataSetsS1+1+0-noht' 'DataSetsS1+5+0-noht' 'DataSetsS1+10+0-noht' 'DataSetsS1+15+0-noht' 'DataSetsS2+0+0-noht' 'DataSetsS2+1+0-noht' 'DataSetsS2+5+0-noht' 'DataSetsS2+10+0-noht' 'DataSetsS2+15+0-noht'}; % NICE NO-HT
+    dataset4 = {'DataSetsS1+0+0-ht' 'DataSetsS1+5+0-ht' 'DataSetsS2+0+0-ht' 'DataSetsS2+5+0-ht' 'DataSetsS2+10+0-ht'}; % NICE HT
+    dataset5 = {'DataSetsS7+0+0-noht' 'DataSetsS7+0+0-noht-batch'}; % SCHEDULER
     datasets = {dataset1{:}, dataset2{:}, dataset3{:}, dataset4{:}, dataset5{:}};
     datasets = {dataset1{:}};
-    datasets = {'p01+0+0-ht' 'p01+0+0-noht' 'p01+0+0+0+0-noht'};
-    datasets = {'p07' 'p07+0+0-noht' 'p07+0+0-noht-batch' 'p07+0+0-noht-fifo' 'p07+0+0+0+0-noht' 'p07+0+0+0+0-noht-z2' 'p07+10+0-noht' 'p07+15+5+5+15-noht' 'p07+15+10+5+0-noht' 'p07+15+10+5+15-noht' 'p07+15+10+10+15-noht' 'p07+15+10+15+15-noht'};
-    datasets = {'p07+0+0-noht' 'p07+0+0-noht-batch' 'p07+0+0-noht-fifo' 'p07+10+0-noht'};
-    datasets = {'p07+0+0+0+0-noht' 'p07+0+0+0+0-noht-z2' 'p07+15+5+5+15-noht' 'p07+15+10+5+0-noht' 'p07+15+10+5+15-noht' 'p07+15+10+10+15-noht' 'p07+15+10+15+15-noht'};
-    datasets = {'p07+0+0-noht' 'p07+0+0+0+0-noht'};
-    datasets = {'p07+0+0-noht1' 'p07+0+0-noht2' 'p07+0+0-noht3' 'p07+0+0-noht4' 'p07+0+0-noht5' 'p07+0+0-noht6' 'p07+0+0-noht7' 'p07+0+0-noht8' 'p07+0+0-noht9' 'p07+0+0-noht10'};
-    datasets = {'p07+0+0+0+0-noht6'};% 'p07+0+0+0+0-noht2' 'p07+0+0+0+0-noht3' 'p07+0+0+0+0-noht4'};
-    %datasets = {'p07+0+0-noht6' 'p07+0+0-noht7' 'p07+0+0-noht8' 'p07+0+0-noht9' 'p07+0+0-noht10'};
-    datasets = {'p08+0+0-noht1' 'p08+0+0-noht2' 'p08+0+0-noht3' 'p08+0+0-noht4' };% 'p07+0+0-noht5' 'p07+0+0-noht6' 'p07+0+0-noht7' 'p07+0+0-noht8' 'p07+0+0-noht9' 'p07+0+0-noht10'};
-    datasets = {'p08+0+0-noht1' 'p08+0+0-noht2' 'p08+0+0-noht3' 'p08+0+0-noht4' 'p07+0+0-noht5' 'p07+0+0-noht6' 'p07+0+0-noht7' 'p07+0+0-noht8' 'p07+0+0-noht9' 'p07+0+0-noht10' 'p07+0+0-noht11' 'p07+0+0-noht12'};
-    %datasets = {'picard08+0+0-noht1' 'picard08+0+0-noht2' 'picard08+0+0-noht3' 'picard08+0+0-noht4'};% 'p07+0+0-noht5' 'p07+0+0-noht6' 'p07+0+0-noht7' 'p07+0+0-noht8' 'p07+0+0-noht9' 'p07+0+0-noht10'};
-    %datasets = {'picard08+0+0-noht1' 'picard08+0+0-noht2' 'picard08+0+0-noht3' 'picard08+0+0-noht4'};% 'p07+0+0-noht5' 'p07+0+0-noht6' 'p07+0+0-noht7' 'p07+0+0-noht8' 'p07+0+0-noht9' 'p07+0+0-noht10'};
-    datasets = {'p08+0+0-noht1' 'p08+0+0-noht2' 'p08+0+0-noht3' 'p08+0+0-noht4'};
+    datasets = {'DataSetsS1+0+0-ht' 'DataSetsS1+0+0-noht' 'DataSetsS1+0+0+0+0-noht'};
+    datasets = {'DataSetsS7' 'DataSetsS7+0+0-noht' 'DataSetsS7+0+0-noht-batch' 'DataSetsS7+0+0-noht-fifo' 'DataSetsS7+0+0+0+0-noht' 'DataSetsS7+0+0+0+0-noht-z2' 'DataSetsS7+10+0-noht' 'DataSetsS7+15+5+5+15-noht' 'DataSetsS7+15+10+5+0-noht' 'DataSetsS7+15+10+5+15-noht' 'DataSetsS7+15+10+10+15-noht' 'DataSetsS7+15+10+15+15-noht'};
+    datasets = {'DataSetsS7+0+0-noht' 'DataSetsS7+0+0-noht-batch' 'DataSetsS7+0+0-noht-fifo' 'DataSetsS7+10+0-noht'};
+    datasets = {'DataSetsS7+0+0+0+0-noht' 'DataSetsS7+0+0+0+0-noht-z2' 'DataSetsS7+15+5+5+15-noht' 'DataSetsS7+15+10+5+0-noht' 'DataSetsS7+15+10+5+15-noht' 'DataSetsS7+15+10+10+15-noht' 'DataSetsS7+15+10+15+15-noht'};
+    datasets = {'DataSetsS7+0+0-noht' 'DataSetsS7+0+0+0+0-noht'};
+    datasets = {'DataSetsS7+0+0-noht1' 'DataSetsS7+0+0-noht2' 'DataSetsS7+0+0-noht3' 'DataSetsS7+0+0-noht4' 'DataSetsS7+0+0-noht5' 'DataSetsS7+0+0-noht6' 'DataSetsS7+0+0-noht7' 'DataSetsS7+0+0-noht8' 'DataSetsS7+0+0-noht9' 'DataSetsS7+0+0-noht10'};
+    datasets = {'DataSetsS7+0+0+0+0-noht6'};% 'DataSetsS7+0+0+0+0-noht2' 'DataSetsS7+0+0+0+0-noht3' 'DataSetsS7+0+0+0+0-noht4'};
+    %datasets = {'DataSetsS7+0+0-noht6' 'DataSetsS7+0+0-noht7' 'DataSetsS7+0+0-noht8' 'DataSetsS7+0+0-noht9' 'DataSetsS7+0+0-noht10'};
+    datasets = {'DataSetsS8+0+0-noht1' 'DataSetsS8+0+0-noht2' 'DataSetsS8+0+0-noht3' 'DataSetsS8+0+0-noht4' };% 'DataSetsS7+0+0-noht5' 'DataSetsS7+0+0-noht6' 'DataSetsS7+0+0-noht7' 'DataSetsS7+0+0-noht8' 'DataSetsS7+0+0-noht9' 'DataSetsS7+0+0-noht10'};
+    datasets = {'DataSetsS8+0+0-noht1' 'DataSetsS8+0+0-noht2' 'DataSetsS8+0+0-noht3' 'DataSetsS8+0+0-noht4' 'DataSetsS7+0+0-noht5' 'DataSetsS7+0+0-noht6' 'DataSetsS7+0+0-noht7' 'DataSetsS7+0+0-noht8' 'DataSetsS7+0+0-noht9' 'DataSetsS7+0+0-noht10' 'DataSetsS7+0+0-noht11' 'DataSetsS7+0+0-noht12'};
+    %datasets = {'server08+0+0-noht1' 'server08+0+0-noht2' 'server08+0+0-noht3' 'server08+0+0-noht4'};% 'DataSetsS7+0+0-noht5' 'DataSetsS7+0+0-noht6' 'DataSetsS7+0+0-noht7' 'DataSetsS7+0+0-noht8' 'DataSetsS7+0+0-noht9' 'DataSetsS7+0+0-noht10'};
+    %datasets = {'server08+0+0-noht1' 'server08+0+0-noht2' 'server08+0+0-noht3' 'server08+0+0-noht4'};% 'DataSetsS7+0+0-noht5' 'DataSetsS7+0+0-noht6' 'DataSetsS7+0+0-noht7' 'DataSetsS7+0+0-noht8' 'DataSetsS7+0+0-noht9' 'DataSetsS7+0+0-noht10'};
+    datasets = {'DataSetsS8+0+0-noht1' 'DataSetsS8+0+0-noht2' 'DataSetsS8+0+0-noht3' 'DataSetsS8+0+0-noht4'};
 
     ERR =[];
     MAXERR =[];
-    picards =         {'p00','p01','p02','p03','p04','p05','p06','p07','p08'}
-    %picards =         {'picard00','picard01','picard02','picard03','picard04','picard05','picard06','picard07','picard08'};
+    servers =         {'p00','DataSetsS1','DataSetsS2','DataSetsS3','DataSetsS4','DataSetsS5','DataSetsS6','DataSetsS7','DataSetsS8'}
+    %servers =         {'server00','server01','server02','server03','server04','server05','server06','server07','server08'};
 
-    picards_sockets = [  1,    2,    2  ,  1  ,  1  ,  1  ,  1  ,  1  ,  2  ]
+    servers_sockets = [  1,    2,    2  ,  1  ,  1  ,  1  ,  1  ,  1  ,  2  ]
     for d=1:length(datasets)
-        p = find(cellfun(@(s) strcmpi(datasets{d}(1:3), s), picards))
-        sockets(d) = picards_sockets(p)
+        p = find(cellfun(@(s) strcmpi(datasets{d}(1:3), s), servers))
+        sockets(d) = servers_sockets(p)
         if strfind(datasets{d},'noht')
             hwthreads(d) = 1;
         else
@@ -61,10 +56,7 @@
         clear RunQ CPU Errors Tput dacapoRun1Trace
         dataset=datasets{d}
         startpwd=pwd
-        dacapo={'batik','jython','avrora','lusearch','sunflow','xalan'};
-    %    dacapo={'batik','jython','luindex','lusearch','sunflow','xalan'};
-     %   dacapo={'xalan','tradesoap','tradebeans','lusearch','sunflow', 'jython', 'h2', 'avrora', 'batik'};
-        dacapo={'batik','jython','luindex','lusearch','sunflow','xalan'};
+        %dacapo={'batik','jython','luindex','lusearch','sunflow','xalan'};
 
         dacapoAbbreviations={'ba','jy','li','ls','sf','xa'};
         basepath=sprintf('%s%s%s',pwd,filesep,dataset)
@@ -91,12 +83,12 @@
                 AAAAAAAAA="333333333333"
                 CurrentPath=pwd
                 try
-                    CPU{j} = sar_loadcpu('logNew.sar',0,'/home/gcasale/sysstat10.2.0/sar')
+                    CPU{j} = sar_loadcpu('logNew.sar',0,'sar')
                     [~,u]=system('sar -f logNew.sar -q |awk ''{print $2}'' | sed ''/[^0-9]/d''  | sed ''1d''')
                     AAAAAAAAAAA="Old Version of SAR"
                 catch me
-                    CPU{j} = sar_loadcpu('logNew.sar',0,'/home/gcasale/sysstat11.2.0/sar');
-                    [~,u]=system('/home/gcasale/sysstat11.2.0/sar -f logNew.sar -q |awk ''{print $2}'' | sed ''/[^0-9]/d''  | sed ''1d''');
+                    CPU{j} = sar_loadcpu('logNew.sar',0,'sar');
+                    [~,u]=system('sar -f logNew.sar -q |awk ''{print $2}'' | sed ''/[^0-9]/d''  | sed ''1d''');
                     AAAAAAAAA="New Version of SAR"
 
                 end
@@ -118,7 +110,7 @@
             for j=1:length(traces)
                 cd(traces{j});
                 % load iterations (throughput)
-                %[~,y1]=system('cat bench1.err |grep "rundacapo"| awk ''{print $4}''|tail -n 1') % Use this for old version of Dacapo, ex dataset from Giuliano 
+                %[~,y1]=system('cat bench1.err |grep "rundacapo"| awk ''{print $4}''|tail -n 1') % Use this for old version of Dacapo, ex dataset from G 
                 [~,y1]=system('cat bench1.err |grep "starting"|awk ''{print $7}''|tail -n 1') % use this for the new version of Dacapo, ex, exp that i have run by myself
 
                 y1
@@ -152,7 +144,7 @@
                     AAAAAAAAA="----------Test here 44444444"
                     Run1Trace(j,2) = nameToRun1Trace(find(cellfun(@(s) strcmpi(tmp{1}{2}, s), dacapo)))
                     % record iterations (throughput) for first job
-                    %[~,y1]=system('cat bench1.err |grep "rundacapo"|awk ''{print $4}''|tail -n 1')  % Use this for old version of Dacapo, ex dataset from Giuliano 
+                    %[~,y1]=system('cat bench1.err |grep "rundacapo"|awk ''{print $4}''|tail -n 1')  % Use this for old version of Dacapo, ex dataset from G
                     [~,y1]=system('cat bench1.err |grep "starting"|awk ''{print $7}''|tail -n 1') % use this for the new version of Dacapo, ex, exp that i have run by myself
 
                     if ~isempty(str2num(y1))
@@ -161,7 +153,7 @@
                         Tput(j,4)=0
                     end
                     % record iterations (throughput) for second job
-                    %[~,y2]=system('cat bench2.err |grep "rundacapo"| awk ''{print $4}''|tail -n 1') % Use this for old version of Dacapo, ex dataset from Giuliano 
+                    %[~,y2]=system('cat bench2.err |grep "rundacapo"| awk ''{print $4}''|tail -n 1') % Use this for old version of Dacapo, ex dataset from G
                     [~,y2]=system('cat bench2.err |grep "starting"|awk ''{print $7}''|tail -n 1') % use this for the new version of Dacapo, ex, exp that i have run by myself
 
                     if ~isempty(str2num(y2))
@@ -221,7 +213,7 @@
     AAAAAAAAA="77777777777"
     %%%%%%fclose(fid0);
     if ~ispc
-        %%%%%%%%cd /home/gcasale/Dropbox/writing/17_tcs_ignio;
+        
         %[s,r]=system('pdflatex main-v2.tex');
         AAAAAAAAAAA="77777777777"
     end

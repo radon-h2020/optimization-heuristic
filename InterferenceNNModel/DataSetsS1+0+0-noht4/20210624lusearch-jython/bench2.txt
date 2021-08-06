@@ -1,0 +1,89 @@
+-------------------------------------------------------------------------------
+PYBENCH 2.0
+-------------------------------------------------------------------------------
+* using Python 2.5.2
+* system check interval set to maximum: 2147483647
+* using timer: time.time
+
+Calibrating tests. Please wait...
+
+Running 1 round(s) of the suite at warp factor 20:
+
+* Round 1 done in 6.755 seconds.
+
+-------------------------------------------------------------------------------
+Benchmark: 2021-06-24 10:35:36
+-------------------------------------------------------------------------------
+
+    Rounds: 1
+    Warp:   20
+    Timer:  time.time
+
+Test                             minimum  average  operation  overhead
+-------------------------------------------------------------------------------
+          BuiltinFunctionCalls:     95ms     95ms    0.37us    0.000ms
+           BuiltinMethodLookup:    110ms    110ms    0.21us    0.000ms
+                 CompareFloats:    106ms    106ms    0.18us    0.000ms
+         CompareFloatsIntegers:     85ms     85ms    0.19us    0.000ms
+               CompareIntegers:    143ms    143ms    0.16us    0.000ms
+        CompareInternedStrings:    202ms    202ms    0.27us    0.000ms
+                  CompareLongs:     81ms     81ms    0.15us    0.000ms
+                CompareStrings:    131ms    131ms    0.26us    0.000ms
+                CompareUnicode:    104ms    104ms    0.28us    0.000ms
+                 ConcatStrings:    150ms    150ms    0.60us    0.000ms
+                 ConcatUnicode:     87ms     87ms    0.58us    0.000ms
+               CreateInstances:     65ms     65ms    1.16us    0.000ms
+            CreateNewInstances:     78ms     78ms    1.86us    0.000ms
+       CreateStringsWithConcat:    248ms    248ms    0.50us    0.000ms
+       CreateUnicodeWithConcat:     64ms     64ms    0.32us    0.000ms
+                  DictCreation:    127ms    127ms    0.63us    0.000ms
+             DictWithFloatKeys:    111ms    111ms    0.25us    0.000ms
+           DictWithIntegerKeys:    128ms    128ms    0.21us    0.000ms
+            DictWithStringKeys:    124ms    124ms    0.21us    0.000ms
+                      ForLoops:     98ms     98ms    7.84us    0.000ms
+                    IfThenElse:    221ms    221ms    0.33us    0.000ms
+                   ListSlicing:     66ms     66ms    9.43us    0.000ms
+                NestedForLoops:     70ms     70ms    0.09us    0.000ms
+          NormalClassAttribute:    142ms    142ms    0.24us    0.000ms
+       NormalInstanceAttribute:    144ms    144ms    0.24us    0.000ms
+           PythonFunctionCalls:     85ms     85ms    0.52us    0.000ms
+             PythonMethodCalls:     64ms     64ms    0.57us    0.000ms
+                     Recursion:     41ms     41ms    1.64us    0.000ms
+                  SecondImport:     63ms     63ms    1.26us    0.000ms
+           SecondPackageImport:     45ms     45ms    0.90us    0.000ms
+         SecondSubmoduleImport:     68ms     68ms    1.36us    0.000ms
+       SimpleComplexArithmetic:    138ms    138ms    0.31us    0.000ms
+        SimpleDictManipulation:    137ms    137ms    0.23us    0.000ms
+         SimpleFloatArithmetic:    202ms    202ms    0.31us    0.000ms
+      SimpleIntFloatArithmetic:    214ms    214ms    0.32us    0.000ms
+       SimpleIntegerArithmetic:    181ms    181ms    0.27us    0.000ms
+        SimpleListManipulation:    150ms    150ms    0.26us    0.000ms
+          SimpleLongArithmetic:    116ms    116ms    0.35us    0.000ms
+                    SmallLists:    134ms    134ms    0.39us    0.000ms
+                   SmallTuples:    217ms    217ms    0.80us    0.000ms
+         SpecialClassAttribute:    142ms    142ms    0.24us    0.000ms
+      SpecialInstanceAttribute:    145ms    145ms    0.24us    0.000ms
+                StringMappings:    137ms    137ms    1.09us    0.000ms
+              StringPredicates:    138ms    138ms    0.39us    0.000ms
+                 StringSlicing:    112ms    112ms    0.40us    0.000ms
+                     TryExcept:     38ms     38ms    0.03us    0.000ms
+                TryRaiseExcept:    273ms    273ms    8.53us    0.000ms
+                  TupleSlicing:     65ms     65ms    0.50us    0.000ms
+               UnicodeMappings:    157ms    157ms    8.72us    0.000ms
+             UnicodePredicates:    135ms    135ms    0.50us    0.000ms
+             UnicodeProperties:    477ms    477ms    2.38us    0.000ms
+                UnicodeSlicing:    101ms    101ms    0.41us    0.000ms
+-------------------------------------------------------------------------------
+Totals:                           6755ms   6755ms
+
+-------------------------------------------------------------------------------
+PYBENCH 2.0
+-------------------------------------------------------------------------------
+* using Python 2.5.2
+* system check interval set to maximum: 2147483647
+* using timer: time.time
+
+Calibrating tests. Please wait...
+
+Running 1 round(s) of the suite at warp factor 20:
+
