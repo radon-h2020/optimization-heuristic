@@ -1,13 +1,9 @@
-[hosts_no, microservices_no] = read_tosca_model([pwd, filesep, 'radonblueprintstesting__DecompositionDemo.tosca']);
-%[input_table, throughput_table] = read_table('data.csv');
-filename_in = [pwd, filesep, 'radonblueprintstesting__DecompositionDemo.tosca'];
-filename_out = [pwd, filesep, 'radonblueprintstesting__DecompositionDemo_out.tosca'];
+filename = [pwd, filesep, 'radonblueprintstesting__DecompositionDemo.tosca'];
+[hosts_no, microservices_no] = read_tosca_model(filename);
 load mynet.mat; % this loads the net object
 v = run_ga(hosts_no, microservices_no, net);
-
 x = v(1:hosts_no * microservices_no);
-modify_tosca_model(filename_in, filename_out, hosts_no, microservices_no, x)
-a=2;
+modify_tosca_model(filename, hosts_no, microservices_no, x)
 
 function [hosts_no, microservices_no] = read_tosca_model(filename)
     addJarPaths();
@@ -149,15 +145,26 @@ function run_linear_program(hosts_no, microservices_no)
     a=2;
 end
 
-function modify_tosca_model(filename_in, filename_out, hosts_no, microservices_no, ga_solution)
+function modify_tosca_model(filename, hosts_no, microservices_no, ga_solution)
     addJarPaths();
     processor = YamlProcessor();
-    tosca = processor.read(filename_in);
+    tosca = processor.read(filename);
     graph = TopologyGraph(tosca.topology_template);
 
     allNodesStruct = graph.getNodes();
     allNodes = fieldnames(allNodesStruct);
-    a=2
+    
+    for i=1:length(allNodes)
+        node = allNodes(i);
+        relationships = graph.findIngressRelationships(node);
+        allRelationships = fieldnames(relationships);
+        if ~isempty(allRelationships)
+            for j =1:length(allRelationships)
+                relationship = allRelationships(j);
+                graph.removeRelationship(relationship)
+            end
+        end
+    end
     
     for current_host = 1: hosts_no
         for current_microservice = 1: microservices_no
@@ -171,6 +178,6 @@ function modify_tosca_model(filename_in, filename_out, hosts_no, microservices_n
     end
 
     tosca.topology_template = graph.transformIntoTemplate();
-    processor.write(tosca, filename_out);
+    processor.write(tosca, filename);
 end
 
