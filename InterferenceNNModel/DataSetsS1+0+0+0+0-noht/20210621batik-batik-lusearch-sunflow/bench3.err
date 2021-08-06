@@ -1,0 +1,279 @@
+===== DaCapo 9.12-MR1 lusearch starting warmup 1 =====
+===== DaCapo 9.12-MR1 lusearch completed warmup 1 in 3347 msec =====
+===== DaCapo 9.12-MR1 lusearch starting warmup 2 =====
+===== DaCapo 9.12-MR1 lusearch completed warmup 2 in 1196 msec =====
+===== DaCapo 9.12-MR1 lusearch starting warmup 3 =====
+===== DaCapo 9.12-MR1 lusearch completed warmup 3 in 1212 msec =====
+===== DaCapo 9.12-MR1 lusearch starting warmup 4 =====
+===== DaCapo 9.12-MR1 lusearch completed warmup 4 in 823 msec =====
+===== DaCapo 9.12-MR1 lusearch starting warmup 5 =====
+===== DaCapo 9.12-MR1 lusearch completed warmup 5 in 1135 msec =====
+===== DaCapo 9.12-MR1 lusearch starting warmup 6 =====
+===== DaCapo 9.12-MR1 lusearch completed warmup 6 in 1299 msec =====
+===== DaCapo 9.12-MR1 lusearch starting warmup 7 =====
+===== DaCapo 9.12-MR1 lusearch completed warmup 7 in 960 msec =====
+===== DaCapo 9.12-MR1 lusearch starting warmup 8 =====
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+org.apache.lucene.store.AlreadyClosedException: this Directory is closed
+	at org.apache.lucene.store.Directory.ensureOpen(Directory.java:220)
+	at org.apache.lucene.store.FSDirectory.list(FSDirectory.java:320)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:533)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:206)
+	at org.dacapo.lusearch.Search$QueryProcessor.<init>(Search.java:207)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)
+java.lang.NullPointerException
+	at org.dacapo.lusearch.Search$QueryProcessor.run(Search.java:226)
+	at org.dacapo.lusearch.Search$QueryThread.run(Search.java:179)

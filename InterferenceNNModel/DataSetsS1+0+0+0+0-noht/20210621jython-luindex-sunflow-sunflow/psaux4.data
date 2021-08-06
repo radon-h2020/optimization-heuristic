@@ -1,0 +1,22 @@
+1624235304.887516731
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  2.0  0.0  18380  3164 ?        Ss   00:28   0:00 /bin/bash ./run1_Parallel4.sh sunflow
+root         9  0.0  0.0 110028  8232 ?        Sl   00:28   0:00 java -jar dacapo-9.12-MR1-bach.jar sunflow -n 1600
+root        12  0.0  0.0  34408  2868 ?        R    00:28   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.3  0.0  18380  3172 ?        Ss   00:28   0:00 /bin/bash ./run1_Parallel4.sh sunflow
+root         9 1104  8.6 10878616 1413800 ?    Sl   00:28   0:55 java -jar dacapo-9.12-MR1-bach.jar sunflow -n 1600
+root       252  0.0  0.0  34408  2836 ?        R    00:28   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.1  0.0  18380  3172 ?        Ss   00:28   0:00 /bin/bash ./run1_Parallel4.sh sunflow
+root         9 1061  8.7 10878616 1436340 ?    Sl   00:28   1:46 java -jar dacapo-9.12-MR1-bach.jar sunflow -n 1600
+root       446  0.0  0.0  34408  2816 ?        R    00:28   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.1  0.0  18380  3172 ?        Ss   00:28   0:00 /bin/bash ./run1_Parallel4.sh sunflow
+root         9 1109  8.8 10878616 1445384 ?    Sl   00:28   2:46 java -jar dacapo-9.12-MR1-bach.jar sunflow -n 1600
+root       704  0.0  0.0  34408  2800 ?        R    00:28   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  18380  3172 ?        Ss   00:28   0:00 /bin/bash ./run1_Parallel4.sh sunflow
+root         9 1139  8.8 10946208 1444364 ?    Sl   00:28   3:47 java -jar dacapo-9.12-MR1-bach.jar sunflow -n 1600
+root       962  0.0  0.0  34408  2824 ?        R    00:28   0:00 ps aux
+1624235329.963684011

@@ -1,0 +1,22 @@
+1624234670.823468385
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  2.0  0.0  18380  3140 ?        Ss   00:17   0:00 /bin/bash ./run1_Parallel3.sh jython
+root         9  0.0  0.0 4485892 13044 ?       Sl   00:17   0:00 java -jar dacapo-9.12-MR1-bach.jar jython -n 1600
+root        13  0.0  0.0  34408  2912 ?        R    00:17   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.3  0.0  18380  3148 ?        Ss   00:17   0:00 /bin/bash ./run1_Parallel3.sh jython
+root         9  182  1.0 8815892 168508 ?      Sl   00:17   0:09 java -jar dacapo-9.12-MR1-bach.jar jython -n 1600
+root        64  0.0  0.0  34408  2920 ?        R    00:17   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.1  0.0  18380  3148 ?        Ss   00:17   0:00 /bin/bash ./run1_Parallel3.sh jython
+root         9  358  2.6 8822036 440240 ?      Sl   00:17   0:39 java -jar dacapo-9.12-MR1-bach.jar jython -n 1600
+root        66  0.0  0.0  34408  2884 ?        R    00:18   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.1  0.0  18380  3148 ?        Ss   00:17   0:00 /bin/bash ./run1_Parallel3.sh jython
+root         9  294  4.5 8822036 747160 ?      Sl   00:17   0:50 java -jar dacapo-9.12-MR1-bach.jar jython -n 1600
+root        68  0.0  0.0  34408  2816 ?        R    00:18   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  18380  3148 ?        Ss   00:17   0:00 /bin/bash ./run1_Parallel3.sh jython
+root         9  274  6.3 8822180 1038088 ?     Sl   00:17   1:00 java -jar dacapo-9.12-MR1-bach.jar jython -n 1600
+root        70  0.0  0.0  34408  2812 ?        R    00:18   0:00 ps aux
+1624234697.854512833

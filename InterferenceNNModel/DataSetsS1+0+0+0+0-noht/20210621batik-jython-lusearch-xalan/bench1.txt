@@ -1,0 +1,5 @@
+About to transcode 3 SVG file(s)
+
+Converting mapWaadt.svg to /root/./scratch/mapWaadt.png ... ... success
+Converting mapSpain.svg to /root/./scratch/mapSpain.png ... ... success
+Converting sydney.svg to /root/./scratch/sydney.png ... 

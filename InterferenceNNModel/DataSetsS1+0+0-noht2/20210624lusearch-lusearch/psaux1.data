@@ -1,0 +1,22 @@
+1624533212.511983606
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  18380  3116 ?        Ss   11:13   0:00 /bin/bash ./run1_Parallel1.sh lusearch
+root         9  0.0  0.0 110028  8276 ?        Sl   11:13   0:00 java -jar dacapo-9.12-MR1-bach.jar lusearch -n 1600
+root        12  0.0  0.0  34408  2912 ?        R    11:13   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.6  0.0  18380  3124 ?        Ss   11:13   0:00 /bin/bash ./run1_Parallel1.sh lusearch
+root         9  869  4.6 10807064 760500 ?     Sl   11:13   0:43 java -jar dacapo-9.12-MR1-bach.jar lusearch -n 1600
+root       155  0.0  0.0  34408  2908 ?        R    11:13   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.3  0.0  18380  3124 ?        Ss   11:13   0:00 /bin/bash ./run1_Parallel1.sh lusearch
+root         9  808  8.2 10807064 1353776 ?    Sl   11:13   1:20 java -jar dacapo-9.12-MR1-bach.jar lusearch -n 1600
+root       349  0.0  0.0  34408  2932 ?        R    11:13   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.2  0.0  18380  3124 ?        Ss   11:13   0:00 /bin/bash ./run1_Parallel1.sh lusearch
+root         9  797  8.6 10807064 1415764 ?    Sl   11:13   1:59 java -jar dacapo-9.12-MR1-bach.jar lusearch -n 1600
+root       543  0.0  0.0  34408  2912 ?        R    11:13   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.1  0.0  18380  3124 ?        Ss   11:13   0:00 /bin/bash ./run1_Parallel1.sh lusearch
+root         9  787  8.8 10807064 1449352 ?    Sl   11:13   2:37 java -jar dacapo-9.12-MR1-bach.jar lusearch -n 1600
+root       737  0.0  0.0  34408  2820 ?        R    11:13   0:00 ps aux
+1624533237.555109190

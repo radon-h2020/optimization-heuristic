@@ -1,0 +1,18 @@
+1624232999.465705627
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  18380  3136 ?        Ss   23:49   0:00 /bin/bash ./run1_Parallel1.sh batik
+root         9  0.0  0.0 4955952 13032 ?       Sl   23:49   0:00 java -jar dacapo-9.12-MR1-bach.jar batik -n 1600
+root        13  0.0  0.0  34408  2884 ?        R    23:49   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.4  0.0  18380  3144 ?        Ss   23:49   0:00 /bin/bash ./run1_Parallel1.sh batik
+root        64  0.0  0.0  34408  2792 ?        R    23:50   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.2  0.0  18380  3144 ?        Ss   23:49   0:00 /bin/bash ./run1_Parallel1.sh batik
+root        66  0.0  0.0  34408  2860 ?        R    23:50   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.1  0.0  18380  3144 ?        Ss   23:49   0:00 /bin/bash ./run1_Parallel1.sh batik
+root        68  0.0  0.0  34408  2900 ?        R    23:50   0:00 ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.1  0.0  18380  3144 ?        Ss   23:49   0:00 /bin/bash ./run1_Parallel1.sh batik
+root        70  0.0  0.0  34408  2860 ?        R    23:50   0:00 ps aux
+1624233024.509042501
