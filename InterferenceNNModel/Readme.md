@@ -52,3 +52,10 @@ input_Train= load ('input_Train.csv');
 net=BestNet{1,1}
 x=net(input_Test')'
 ```
+
+
+### To use the NN model for only the job numbers as an input:
+
+``` 
+/vol/matlab/R2018a/bin/matlab -nodisplay -r "Reg4Jobs_RepresentB_V4_ThroughputRADON_V2FunctionPicardsSixColu(pwd)" 
+```
