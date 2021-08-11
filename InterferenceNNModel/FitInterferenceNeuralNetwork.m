@@ -1,13 +1,11 @@
 function [TheBestNeuralNetworks]=FitInterferenceNeuralNetwork(InputPath) 
 % Created 15-Sep-2020 15:43:59
 
-
-
 Number_of_Jobs_Types = 6 % This is for number of jobs , ex:  'xalan','tradesoap','tradebeans','lusearch','sunflow', 'jython', 'h2', 'avrora', 'batik'
 
 %Toget all the folders names of datasets
 %Training data
-FolderInputDatasets_Training = dir('DataSetsS1+0+0-noht*')
+FolderInputDatasets_Training = dir(fullfile(InputPath, 'DataSetsS1+0+0-noht*'))
 % remove all files (isdir property is 0)
 dfolders_Training = FolderInputDatasets_Training([FolderInputDatasets_Training(:).isdir]) 
 % remove '.' and '..' 
@@ -21,7 +19,7 @@ end
 
 %To get all the folders names of datasets
 %Training data
-FolderInputDatasets_Testing = dir('Da*+*+*+*')
+FolderInputDatasets_Testing = dir(fullfile(InputPath, 'Da*+*+*+*'))
 % remove all files (isdir property is 0)
 dfolders_Test = FolderInputDatasets_Testing([FolderInputDatasets_Testing(:).isdir]) 
 % remove '.' and '..' 
@@ -558,6 +556,8 @@ TheBestNeuralNetworks=cell(NumberOfBestValue,1)
          %This to save NN that acchived < 'Best_TargetValue_MAPE'
          TheBestNeuralNetworks{j,1}= NeuralNetworks;
          save TheBestNeuralNetworks
+         FullPath=fullfile(InputPath, 'TheBestNeuralNetworks');
+         save(FullPath,'TheBestNeuralNetworks')
          %clear net;
      end
      
@@ -594,7 +594,7 @@ ylim([0, 100])%max(100,1.1*max(MAPE(:)))])
 hold off
 
 datasets="Best4NN"
-saveas(gcf,char(datasets),'epsc')
+saveas(gcf,fullfile(InputPath, char(datasets)),'epsc')
 
 
 figure(3)
@@ -618,10 +618,10 @@ Test_File_mondata
 
 
 
-csvwrite('input_Train.csv', input) 
-csvwrite('target_Train.csv',target) 
-csvwrite('input_Test.csv', input_Test) 
-csvwrite('target_Test.csv', target_Test) 
+csvwrite(fullfile(InputPath, 'input_Train.csv'), input) 
+csvwrite(fullfile(InputPath, 'target_Train.csv'),target) 
+csvwrite(fullfile(InputPath, 'input_Test.csv'), input_Test) 
+csvwrite(fullfile(InputPath, 'target_Test.csv'), target_Test) 
 
 % BestMAPE= [ MAPE(:,5) , MAPE(:,15), MAPE(:,21), MAPE(:,29)];
 % figure(2)
