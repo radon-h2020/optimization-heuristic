@@ -555,7 +555,7 @@ TheBestNeuralNetworks=cell(NumberOfBestValue,1)
          
          %This to save NN that acchived < 'Best_TargetValue_MAPE'
          TheBestNeuralNetworks{j,1}= NeuralNetworks;
-         save TheBestNeuralNetworks
+         %save TheBestNeuralNetworks
          FullPath=fullfile(InputPath, 'TheBestNeuralNetworks');
          save(FullPath,'TheBestNeuralNetworks')
          FullPath=fullfile(InputPath, 'BestNet');
