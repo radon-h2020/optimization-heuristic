@@ -558,6 +558,8 @@ TheBestNeuralNetworks=cell(NumberOfBestValue,1)
          save TheBestNeuralNetworks
          FullPath=fullfile(InputPath, 'TheBestNeuralNetworks');
          save(FullPath,'TheBestNeuralNetworks')
+         FullPath=fullfile(InputPath, 'BestNet');
+         save(FullPath,'TheBestNeuralNetworks')
          %clear net;
      end
      

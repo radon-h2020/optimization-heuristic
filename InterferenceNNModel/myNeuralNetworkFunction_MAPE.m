@@ -53,7 +53,7 @@ R= R_Matrix(1,2);
 %To Save neural network to 'BestNet'
 if mean( Percent_Error_Test) <= Best_TargetValue_MAPE     
     BestNet=net;
-    save BestNet;
+    %%%%%%%%save BestNet;
 end
 
 
