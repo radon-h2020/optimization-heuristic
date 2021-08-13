@@ -22,6 +22,11 @@ topology_template:
         private_address: '{ get_property: [ SELF, host, private_address ] }'
         name: '{ get_property: [ SELF, host, name ] }'
         public_address: '{ get_property: [ SELF, host, public_address ] }'
+      requirements:
+        - host:
+            node: OperableCompute_0
+            relationship: con_HostedOn_1
+            capability: host
     OperableCompute_1:
       type: radon.nodes.OperableCompute
       metadata:
@@ -41,6 +46,11 @@ topology_template:
         private_address: '{ get_property: [ SELF, host, private_address ] }'
         name: '{ get_property: [ SELF, host, name ] }'
         public_address: '{ get_property: [ SELF, host, public_address ] }'
+      requirements:
+        - host:
+            node: OperableCompute_1
+            relationship: con_HostedOn_2
+            capability: host
     DockerApplication_0:
       type: radon.nodes.testing.DockerApplication
       metadata:
@@ -53,8 +63,8 @@ topology_template:
         cmd: ls
       requirements:
         - host:
-            node: DockerEngine_1
-            relationship: con_HostedOn_2
+            node: DockerEngine_0
+            relationship: con_HostedOn_3
             capability: host
     DockerApplication_1:
       type: radon.nodes.testing.DockerApplication
@@ -68,8 +78,8 @@ topology_template:
         cmd: ls
       requirements:
         - host:
-            node: DockerEngine_0
-            relationship: con_HostedOn_0
+            node: DockerEngine_1
+            relationship: con_HostedOn_5
             capability: host
     DockerApplication_2:
       type: radon.nodes.testing.DockerApplication
@@ -83,8 +93,8 @@ topology_template:
         cmd: ls
       requirements:
         - host:
-            node: DockerEngine_0
-            relationship: con_HostedOn_1
+            node: DockerEngine_1
+            relationship: con_HostedOn_6
             capability: host
     DockerApplication_3:
       type: radon.nodes.testing.DockerApplication
@@ -98,15 +108,19 @@ topology_template:
         cmd: ls
       requirements:
         - host:
-            node: DockerEngine_1
-            relationship: con_HostedOn_3
+            node: DockerEngine_0
+            relationship: con_HostedOn_4
             capability: host
   relationship_templates:
-    con_HostedOn_0:
+    con_HostedOn_2:
       type: tosca.relationships.HostedOn
     con_HostedOn_1:
       type: tosca.relationships.HostedOn
-    con_HostedOn_2:
-      type: tosca.relationships.HostedOn
     con_HostedOn_3:
+      type: tosca.relationships.HostedOn
+    con_HostedOn_4:
+      type: tosca.relationships.HostedOn
+    con_HostedOn_5:
+      type: tosca.relationships.HostedOn
+    con_HostedOn_6:
       type: tosca.relationships.HostedOn

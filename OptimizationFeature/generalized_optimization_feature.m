@@ -3,6 +3,7 @@ filename = [pwd, filesep, 'radonblueprintstesting__DecompositionDemo.tosca'];
 load mynet.mat; % this loads the net object
 v = run_ga(hosts_no, microservices_no, net);
 x = v(1:hosts_no * microservices_no);
+%x=[1,0,0,1,0,1,1,0];
 modify_tosca_model(filename, hosts_no, microservices_no, x)
 
 function [hosts_no, microservices_no] = read_tosca_model(filename)
@@ -173,7 +174,11 @@ function modify_tosca_model(filename, hosts_no, microservices_no, ga_solution)
     relationships = graph.getRelationships();
     allRelationships = fieldnames(relationships);
     for j =1:length(allRelationships)
-        graph.removeRelationship(relationships.(allRelationships{j}));
+        if isa(relationships.(allRelationships{j}),'HostedOn')
+            if isa(getSourceNode(relationships.(allRelationships{j})), 'DockerApplication')
+                graph.removeRelationship(relationships.(allRelationships{j}));
+            end
+        end
     end
     
     for current_host = 1: hosts_no
