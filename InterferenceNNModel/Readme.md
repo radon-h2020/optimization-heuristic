@@ -29,7 +29,7 @@ Then call function PreprocessInputDatasets_4Jobs and provid path to datasets."
 ### Run NN model
 Provid path do datasets (training and testing) The neural network will return trained NN model. To run the NN model:
 ``` 
-/vol/matlab/R2018a/bin/matlab -nodisplay -r "Reg4Jobs_RepresentB_V4_ThroughputRADON_V2FunctionPicards(pwd)" 
+/vol/matlab/R2018a/bin/matlab -nodisplay -r "FitInterferenceNeuralNetwork(pwd)" 
 ```
 
 
@@ -41,7 +41,7 @@ The following is a simple application of using the NN model:
  close all
 
 % Calling the NN model
-BestNet=Reg4Jobs_RepresentB_V4_ThroughputRADON_V2FunctionPicards(pwd)
+BestNet=FitInterferenceNeuralNetwork(pwd)
 
 % Loading the testing data
 input_Test = load('input_Test.csv'); 
@@ -57,5 +57,5 @@ x=net(input_Test')'
 ### To use the NN model for only the job numbers as an input:
 
 ``` 
-/vol/matlab/R2018a/bin/matlab -nodisplay -r "Reg4Jobs_RepresentB_V4_ThroughputRADON_V2FunctionPicardsSixColu(pwd)" 
+/vol/matlab/R2018a/bin/matlab -nodisplay -r "FitInterferenceNeuralNetwork(pwd)" 
 ```
