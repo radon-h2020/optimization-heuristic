@@ -66,9 +66,36 @@ x=net(input_Test')'
 
 # Optimization Feature:
 
+The optimization feature first loads a tosca model and by this calculates the number of microservices and the number of hosts. Then a genetic algorithm is used as an optimization method to find an (approximately) optimal allocation of microservices to hosts, having as an objective the minimization of the total interference. The optimization problem can also be solved exactly optimally using a linear programming formulation. Hower, the solution time can be exponentially large with regards to the given input to the problem (i.e. number of hosts and number of microservices), while the genetic alforithm is very efficient. Once the optimization problem is solved, the tosca model is updated with the new relationships between the hosts and the microservices.
 
-The set_cover.m file contains the implementations for the optimization problem. The user can decide by the function run_algorithm() to either run the exact algorithm which solves the integer linear programming formulation of the set cover problem optimally, or run the heuristic that runs the greedy algorithm to solve the problem approximately but in a more efficient way. 
+In order to solve the above problems the user needs to run the generalised_optimization_feature.m file in matlab.
 
-The interference is computed by the compute_interference_table() method that translates the throughput of a selection.
 
-The method modify_tosca_model() adds the relationships to the corresponding graph of the tosca model.
+### To load the tosca model:
+The user needs to provide a valid .tosca model and run the command
+```
+read_tosca_model(filename)
+```
+
+### To load the network object:
+The user can load the network object with the following command
+```
+load mynet.mat
+```
+
+### To run the genetic algorithm:
+The user can run the genetiv algorithm with the following command
+```
+run_ga(hosts_no, microservices_no, net)
+```
+
+After that a binary vector is output e.g. x=[1,0,0,1,0,1,1,0].
+
+
+### To update the tosca model:
+The user can update the tosca model with the new relationships with the following command
+```
+modify_tosca_model(filename, hosts_no, microservices_no, x)
+```
+
+
