@@ -11,7 +11,7 @@ DataSetsS1+0+0-noht4
 
 Then call function PreprocessInputDatasets_2Jobs and provide the path to datasets."
 ```
-/vol/matlab/R2018a/bin/matlab -nodisplay -r "PreprocessInputDatasets_2Jobs(pwd)"
+matlab -nodisplay -r "PreprocessInputDatasets_2Jobs(pwd)"
 ```
 
 
@@ -23,13 +23,13 @@ DataSetsS1+0+0+0+0-noht
 
 Then call function PreprocessInputDatasets_4Jobs and provid path to datasets."
 ```
-/vol/matlab/R2018a/bin/matlab -nodisplay -r "PreprocessInputDatasets_4Jobs(pwd)" 
+matlab -nodisplay -r "PreprocessInputDatasets_4Jobs(pwd)" 
 ```
 
 ### Run NN model
 Provid path do datasets (training and testing) The neural network will return trained NN model. To run the NN model:
 ``` 
-/vol/matlab/R2018a/bin/matlab -nodisplay -r "FitInterferenceNeuralNetwork(pwd)" 
+matlab -nodisplay -r "FitInterferenceNeuralNetwork(pwd)" 
 ```
 
 
@@ -54,8 +54,3 @@ x=net(input_Test')'
 ```
 
 
-### To use the NN model for only the job numbers as an input:
-
-``` 
-/vol/matlab/R2018a/bin/matlab -nodisplay -r "FitInterferenceNeuralNetwork(pwd)" 
-```
