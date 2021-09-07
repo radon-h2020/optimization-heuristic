@@ -3,6 +3,7 @@ filename = [pwd, filesep, 'radonblueprintstesting__DecompositionDemo.tosca'];
 load mynet.mat; % this loads the net object
 v = run_ga(hosts_no, microservices_no, net);
 x = v(1:hosts_no * microservices_no);
+%x=[1,0,0,1,0,1,1,0];
 modify_tosca_model(filename, hosts_no, microservices_no, x)
 
 function [hosts_no, microservices_no] = read_tosca_model(filename)
@@ -91,8 +92,24 @@ function v = run_ga(hosts_no, microservices_no,net)
     lb = zeros(size(intcon));
     ub = ones(size(intcon));
     [v,fval] = ga(@(v)ga_objective(v,hosts_no, microservices_no, net),total_variables_no,A,b,Aeq,beq,lb,ub,[],[], options);
-    v = round(v); % UGLY 
-    a=2;
+    %v = round(v); % UGLY 
+    for current_microservice=1:microservices_no
+        max_value = 0;
+        max_index = 1;
+        for current_host=1:hosts_no
+            if v((current_host - 1)* microservices_no + current_microservice) > max_value
+                max_value = v((current_host - 1)* microservices_no + current_microservice);
+                max_index = (current_host - 1)* microservices_no + current_microservice;
+            end
+        end
+        for current_host=1:hosts_no
+            if (current_host - 1)* microservices_no + current_microservice == max_index
+                v((current_host - 1)* microservices_no + current_microservice) = 1;
+            else
+                v((current_host - 1)* microservices_no + current_microservice) = 0;
+            end
+        end
+    end
 end
 
 function run_linear_program(hosts_no, microservices_no)
@@ -154,14 +171,12 @@ function modify_tosca_model(filename, hosts_no, microservices_no, ga_solution)
     allNodesStruct = graph.getNodes();
     allNodes = fieldnames(allNodesStruct);
     
-    for i=1:length(allNodes)
-        node = allNodes(i);
-        relationships = graph.findIngressRelationships(node);
-        allRelationships = fieldnames(relationships);
-        if ~isempty(allRelationships)
-            for j =1:length(allRelationships)
-                relationship = allRelationships(j);
-                graph.removeRelationship(relationship)
+    relationships = graph.getRelationships();
+    allRelationships = fieldnames(relationships);
+    for j =1:length(allRelationships)
+        if isa(relationships.(allRelationships{j}),'HostedOn')
+            if isa(getSourceNode(relationships.(allRelationships{j})), 'DockerApplication')
+                graph.removeRelationship(relationships.(allRelationships{j}));
             end
         end
     end
@@ -169,11 +184,13 @@ function modify_tosca_model(filename, hosts_no, microservices_no, ga_solution)
     for current_host = 1: hosts_no
         for current_microservice = 1: microservices_no
             applicationNode = graph.getNode('DockerApplication_' +string(current_microservice-1));
+            engineNode = graph.getNode('DockerEngine_' +string(current_host-1));
             ga_solution_index = (current_host-1)*microservices_no + current_microservice;
-            engineNode = graph.getNode('DockerEngine_' +string(ga_solution(ga_solution_index)));
-            hostedOnRelationshipName = generateRelationshipName('HostedOn', graph);
-            hostedOnRelationship = HostedOn(hostedOnRelationshipName);
-            graph.addRelationship(hostedOnRelationship, applicationNode, engineNode);
+            if ga_solution(ga_solution_index) == 1
+                hostedOnRelationshipName = generateRelationshipName('HostedOn', graph);
+                hostedOnRelationship = HostedOn(hostedOnRelationshipName);
+                graph.addRelationship(hostedOnRelationship, applicationNode, engineNode);
+            end
         end
     end
 
